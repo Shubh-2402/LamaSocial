@@ -1,4 +1,6 @@
 .feed{
     flex: 5.5;
-    background-color: thistle;
+}
+.feed__container{
+    padding: 20px;
 }
