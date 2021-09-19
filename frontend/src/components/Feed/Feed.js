@@ -9,6 +9,8 @@ function Feed() {
             <div className="feed__container">
                 <Share />
                 <Post />
+                <Post />
+                <Post />
             </div>
         </div>
     )
