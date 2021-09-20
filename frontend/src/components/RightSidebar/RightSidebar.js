@@ -90,7 +90,7 @@ function RightSidebar({profile}){
     return (
         <div className="rightSidebar">
             <div className="rightSidebar__container">
-                <ProfileRightSidebar/>
+                {profile ? <ProfileRightSidebar/>:<HomeRightSidebar/>}
             </div>
         </div>
     )
