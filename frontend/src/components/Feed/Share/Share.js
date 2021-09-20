@@ -10,7 +10,7 @@ function Share() {
             <div className="share__container">
 
                 <div className="share__header">
-                    <Avatar src="assets/person/4.jpeg" style={{zIndex: -1}} />
+                    <Avatar src="assets/person/4.jpeg"/>
                     <input type="text" placeholder="What's on your mind Julia? " />
                 </div>
 

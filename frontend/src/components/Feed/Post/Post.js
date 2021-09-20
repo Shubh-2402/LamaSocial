@@ -9,7 +9,7 @@ function Post() {
             <div className="post__container">
                 <div className="post__header">
                     <div className="post__headerInfo">
-                        <Avatar src="assets/person/4.jpeg" style={{zIndex: -1}}/>
+                        <Avatar src="assets/person/4.jpeg"/>
                         <span className="post__username">Julia Roberts</span>
                         <span className="post__time">5 mins ago...</span>
                     </div>

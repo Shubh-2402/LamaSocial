@@ -42,7 +42,6 @@
     margin-top: 15px;
     margin-bottom: 15px;
     position: relative;
-    z-index: -1;
 }
 .rightSidebar__online{
     height: 12px;
@@ -57,4 +56,47 @@
 .rightSidebar__username{
     margin-left: 10px;
     font-weight: 500;
+}
+
+
+
+
+ /* Profile page */
+
+.rightSidebar__infoTitle{
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.rightSidebar__following > .MuiAvatar-root{
+    height: 100px;
+    width: 100px;
+}
+.rightSidebar__infoContainer{
+    margin-bottom: 30px;
+}
+.rightSidebar__info{
+    margin-bottom: 10px;
+}
+.rightSidebar__infoKey{
+    font-weight: 500;
+    margin-right: 15px;
+    color: #555;
+}
+.rightSidebar__infoValue{
+    font-weight: 300;
+}
+.rightSidebar__followings{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.rightSidebar__following{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
 }
