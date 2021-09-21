@@ -6,6 +6,7 @@ import morgan from "morgan"
 
 import userRoute from "./routes/users.js"
 import authRoute from "./routes/auth.js"
+import postRoute from "./routes/posts.js"
 //App Config
 
 const app = express()
@@ -28,6 +29,7 @@ app.use(morgan("common"))
 //API ROUTES
 
 app.use("/api/users",userRoute)
+app.use("/api/posts",postRoute)
 app.use("/api/auth",authRoute)
 
 app.listen(port,()=>{
