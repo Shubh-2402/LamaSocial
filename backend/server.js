@@ -3,6 +3,7 @@ import express from "express"
 import helmet from "helmet"
 import mongoose from "mongoose"
 import morgan from "morgan"
+import cors from "cors"
 
 import userRoute from "./routes/users.js"
 import authRoute from "./routes/auth.js"
@@ -25,6 +26,7 @@ mongoose.connect(process.env.MONGODB_CONNECTION_URL,
 app.use(express.json())
 app.use(helmet())
 app.use(morgan("common"))
+app.use(cors())
 
 //API ROUTES
 

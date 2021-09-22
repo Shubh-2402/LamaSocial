@@ -2,7 +2,7 @@ import { Avatar } from '@material-ui/core'
 import React from 'react'
 import "./RightSidebar.css"
 
-function RightSidebar({profile}){
+function RightSidebar({user}){
 
     const HomeRightSidebar = ()=>{
         return (
@@ -44,15 +44,15 @@ function RightSidebar({profile}){
             <div className="rightSidebar__infoContainer">
                 <div className="rightSidebar__info">
                     <span className="rightSidebar__infoKey">City:</span>
-                    <span className="rightSidebar__infoValue">New York</span>
+                    <span className="rightSidebar__infoValue">{user.currentCity}</span>
                 </div>
                 <div className="rightSidebar__info">
                     <span className="rightSidebar__infoKey">From:</span>
-                    <span className="rightSidebar__infoValue">Madrid</span>
+                    <span className="rightSidebar__infoValue">{user.homeTown}</span>
                 </div>
                 <div className="rightSidebar__info">
                     <span className="rightSidebar__infoKey">Relationship :</span>
-                    <span className="rightSidebar__infoValue">Single</span>
+                    <span className="rightSidebar__infoValue">{user.relationship === 1 ? "Single" : user.relationship ===2 ? "Married": ""}</span>
                 </div>
             </div>
             <h4 className='rightSidebar__infoTitle'>User friends</h4>
@@ -90,7 +90,7 @@ function RightSidebar({profile}){
     return (
         <div className="rightSidebar">
             <div className="rightSidebar__container">
-                {profile ? <ProfileRightSidebar/>:<HomeRightSidebar/>}
+                {user ? <ProfileRightSidebar/>:<HomeRightSidebar/>}
             </div>
         </div>
     )
