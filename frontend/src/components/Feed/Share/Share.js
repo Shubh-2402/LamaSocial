@@ -1,9 +1,15 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import "./Share.css"
 import { Avatar } from '@material-ui/core'
 import {EmojiEmotions, Label, LocationOn, PermMedia} from "@material-ui/icons"
+import { AuthContext } from '../../../context/AuthContext'
 
 function Share() {
+
+    const {user} = useContext(AuthContext)
+
+    const firstName = user.username.split(" ")[0]
+
     return (
         <div className="share">
 
@@ -11,7 +17,7 @@ function Share() {
 
                 <div className="share__header">
                     <Avatar src="assets/person/4.jpeg"/>
-                    <input type="text" placeholder="What's on your mind Julia? " />
+                    <input type="text" placeholder={`What's on your mind ${firstName}?`} />
                 </div>
 
                 <hr className="share__hr"/>
