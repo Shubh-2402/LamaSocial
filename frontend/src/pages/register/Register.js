@@ -1,7 +1,40 @@
-import React from 'react'
+import axios from '../../axios'
+import React, { useRef } from 'react'
 import "./register.css"
+import {useHistory} from "react-router"
 
 function Register() {
+    
+    const username = useRef()
+    const email = useRef()
+    const password = useRef()
+    const confirm_password = useRef()
+    const history = useHistory()
+    
+
+    const handleSubmit = async(e)=>{ 
+        e.preventDefault()
+
+        if(password.current.value !== confirm_password.current.value){
+            confirm_password.current.setCustomValidity("Confirm Password Should match with Password")
+        }else{
+            const user={
+                username:username.current.value,
+                email:email.current.value,
+                password:password.current.value,
+            }
+
+            try{
+                await axios.post("auth/register",user)
+                history.push("/login")
+            }catch (error) {
+                console.log(error);
+            }
+            
+        }
+        // loginCall({email:email.current.value , password:password.current.value}, dispatch)
+    }
+
     return (
         <div className="register">
             <div className="register__container">
@@ -12,15 +45,15 @@ function Register() {
                     </span>
                 </div>
                 <div className="register__right">
-                    <div className="register__form">
-                        <input type="text" placeholder="Username" />
-                        <input type="text" placeholder="Email" />
-                        <input type="text" placeholder="Password" />
-                        <input type="text" placeholder="Confirm Password" />
-                        <button className="register__button">Sign Up</button>
+                    <form className="register__form" onSubmit={handleSubmit}>
+                        <input type="text" required placeholder="Username" ref={username} />
+                        <input type="email" required placeholder="Email" ref={email} />
+                        <input type="password" required placeholder="Password" ref={password} minLength="8"/>
+                        <input type="password" required placeholder="Confirm Password" ref={confirm_password}/>
+                        <button className="register__button" type="submit">Sign Up</button>
                         <hr />
                         <button className="register__loginButton">Log into Existing Account</button>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>

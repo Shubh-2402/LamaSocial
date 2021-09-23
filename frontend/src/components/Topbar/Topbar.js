@@ -1,11 +1,15 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import {Chat, Notifications, Person, Search} from '@material-ui/icons';
 import { Avatar, IconButton } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import "./Topbar.css"
+import { AuthContext } from '../../context/AuthContext';
 
 
 function Topbar(){
+
+    const {user}=useContext(AuthContext)
+
     return (
         <div className="topbar">
             <div className="topbar__left">
@@ -46,7 +50,10 @@ function Topbar(){
                     </div>
                     </IconButton>
                 </div>
-                <Avatar src="/assets/person/4.jpeg"></Avatar>
+                <Link to={`/profile/${user.username}`}>
+                    <Avatar src="/assets/person/4.jpeg"></Avatar>
+                </Link>
+                
             </div>
         </div>
     )

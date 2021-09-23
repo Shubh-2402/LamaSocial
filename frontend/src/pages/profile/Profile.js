@@ -19,7 +19,7 @@ function Profile() {
             setUser(req.data)
         }
         fetchUser();
-    },[])
+    },[username])
     return (
         <div className="profile">
             <Topbar />

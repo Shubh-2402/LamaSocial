@@ -65,6 +65,10 @@
     box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
 }
 
+.login__button:disabled{
+    cursor: not-allowed;
+}
+
 .login__form > span{
     text-align: center;
     color: #1775ee;
